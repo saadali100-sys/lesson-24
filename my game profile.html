@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY GAME PROFILE</title>
+  <style>
+    <style>
+      body {
+
+      font-family: Arial, sans-serif;
+
+      background: rgb(221, 224, 226);
+
+      background-image: linear-gradient(to left , purple , coral);
+
+      text-align: center;
+
+      padding: 30px;
+
+    }
+
+    h1 {
+      color: navy;
+    }
+
+    button {
+
+      background: navy;
+
+      color: white;
+
+      padding: 10px 25px;
+
+      border: none;
+
+      border-radius: 20px;
+
+      cursor: pointer;
+
+    }
+
+    div {
+
+      border: 1px solid navy;
+
+      width: 280px;
+
+      margin: 6px auto;
+
+      padding: 8px 12px;
+
+      text-align: left;
+
+      border-radius: 6px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1>MY GAME PROFILE</h1>
+  <button onclick="showprofile()">show profile</button>
+  <div>name: <span id="name"></span></div>
+  <div>score: <span id="score"></span></div>
+  <div>top score: <span id="topscore"></span></div>
+  <div>rank: <span id="rank"></span></div>
+  <div>greeting: <span id="greeting"></span></div>
+  <div>stars: <span id="stars"></span></div>
+  <div>bonus level: <span id="bonuslevel"></span></div>
+  <div>teamname: <span id="teamname"></span></div>
+  <script>
+    function showprofile() {
+      // Example data - replace with actual game data
+
+      let name = "Zimmal";
+      let score = 80;
+      let topscore = 100;
+      let teamname;
+      let bonuslevel = null;
+      let istopscore = score == topscore;
+      let rank;
+      if (score >= 80) {
+        rank = "gold";
+      }
+      else if (score >= 50) {
+        rank = "silver";
+      }
+      else {
+        rank = "bronze";
+
+      }
+      let hours = new Date().getHours();
+      let greeting;
+      if (hours < 12) {
+        greeting = "good morning";
+      }
+      else if (hours < 18) {
+        greeting = "good afternoon";
+      }
+      else {
+        greeting = "good evening";
+      };
+      let stars = "";
+      let count = 0;
+      while (count < 5) {
+        stars += "⭐";
+        count++;
+      };
+
+
+
+      // Update the HTML elements with the profile data
+      document.getElementById("name").innerHTML = name;
+      document.getElementById("score").innerHTML = score;
+      document.getElementById("topscore").innerHTML = topscore;
+      document.getElementById("rank").innerHTML = rank;
+      document.getElementById("greeting").innerHTML = greeting;
+      document.getElementById("stars").innerHTML = stars;
+      document.getElementById("bonuslevel").innerHTML = bonuslevel;
+      document.getElementById("teamname").innerHTML = teamname;
+    }
+
+  </script>
+</body>
+
+</html>
